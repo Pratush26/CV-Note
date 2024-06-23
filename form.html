@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+    <style>
+    #nav
+{
+  display:flex;
+  gap:6vw;
+}
+body
+{
+  background-color:lavender;
+}
+header
+{
+  background-color:#16161a;
+  color:white;
+  position:sticky;
+  top:0px;
+  border-radius:15px;
+}
+header a:visited
+{
+  color:lavender;
+}
+header a:link
+{
+  color:white;
+}
+        form {
+            width: 80%;
+            margin: auto;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-text {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px; /* Optional: Add margin-bottom for spacing */
+        }
+
+        .radio-label {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 5px 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .radio-input {
+            display: none;
+        }
+
+        .radio-input:checked +.radio-label {
+            background-color: #0066cc;
+            color: white;
+            border-color: #0066cc;
+        }
+        button
+        {
+          border-radius:15px;
+        }
+    </style>
+</head>
+<body>
+<header>
+ <nav>
+  <ul type ="none" id="nav">
+   <li><a href="index.html">Home</a></li>
+   <li><a href="index.html/#project">Project 3D</a></li>
+   <li><a href="form.html">Form</a></li>
+   <li><a href="">H</a></li>
+  </ul>
+ </nav>
+</header>
+    <form>
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" class="input-text" placeholder="Enter your name">
+
+        <label for="number">Contact number:</label>
+        <input type="number" id="number" name="number" class="input-text" placeholder="Enter contact number">
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" class="radio-input">
+        <label for="male" class="radio-label">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female" class="radio-input">
+        <label for="female" class="radio-label">Female</label>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
