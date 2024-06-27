@@ -2,9 +2,10 @@
 {
   --f1-color:lavender;
   --sec-color:#16161a;
-  --th-color:#204;
+  --th-color:#4c2c7c;
   --f4-color:lightblue;
   --fif-color:#004;
+  --six-color:#afafde;
 }
 ::selection
 {
@@ -64,10 +65,32 @@ header a:link
 #heading_portion
 {
  background:linear-gradient(45deg,transparent,black);
- display:inline-block;
- box-sizing:border-box;
+ display:grid;
+ grid-template-columns:[A]50vw [B]50vw;
  width:100vw;
+ min-height:165px;
  line-height:2;
+ overflow:hidden;
+}
+#photo
+{
+  grid-column-start:B;
+  animation:photo 3s ease forwards;
+  animation-iteration-count:1;
+}
+@keyframes photo
+{
+  from {
+        transform:translateX(100%);
+    }
+    to {
+        transform: translateX(0%); /* Adjust position to center the shape */
+    }
+}
+#writing
+{
+  grid-column:A/B;
+  grid-row:1/2;
 }
 .up
 {
@@ -86,7 +109,7 @@ img
 }
 #scrollbar
 {
-  background-color:#afafde;
+  background-color:var(--six-color);
   width:80vw;
   margin:15px auto 15px auto;
   border-radius:15px;
@@ -102,7 +125,7 @@ img
   text-decoration-style:dotted;;
   text-decoration-thickness:;
   text-decoration-color:;
-  text-shadow:2px 1px 4px var(--th-color);
+  text-shadow:2px 1px 4px var(--fif-color);
 }
 ol ul li
 {
@@ -153,15 +176,16 @@ th
 }
 td
 {
-  background-color:#c0c0f0;
+  background-color:var(--six-color);
 }
 dl
 {
   text-indent:20px;
+  margin:10px 0px;
 }
 dt
 {
-  background-color:purple;
+  background-color:var(--th-color);
   color:white;
   width:50vw;
 }
