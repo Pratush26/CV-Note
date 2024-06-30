@@ -2,7 +2,7 @@
 {
   --f1-color:lavender;
   --sec-color:#16161a;
-  --th-color:#4c2c7c;
+  --th-color:#451575;
   --f4-color:lightblue;
   --fif-color:#004;
   --six-color:#afafde;
@@ -71,6 +71,17 @@ header a:link
  min-height:165px;
  line-height:2;
  overflow:hidden;
+ animation:heading 2s ease;
+ border-radius:0 70px 70px 0;
+}
+@keyframes heading
+{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
 }
 #photo
 {
@@ -91,6 +102,16 @@ header a:link
 {
   grid-column:A/B;
   grid-row:1/2;
+  animation:writing 2s ease forwards;
+}
+@keyframes writing
+{
+  from{
+    transform:translatey(100%);
+  }
+  to{
+    transform:translatey(0%);
+  }
 }
 .up
 {
@@ -145,7 +166,7 @@ ol ul li
 }
 #num
 {
-  border:2px solid purple;
+  border:2px outset #9f30ba;
   border-radius:10px;
   display:inline-block;
   width:40px;
@@ -177,6 +198,7 @@ th
 td
 {
   background-color:var(--six-color);
+  color:var(--th-color);
 }
 dl
 {
@@ -201,6 +223,11 @@ dt
   outline:2px solid white;
   border-radius:15px;
   padding:0px 10px 0px 10px;
+}
+iframe
+{
+  border-radius:10px;
+  margin:8px;
 }
 footer
 {
