@@ -6,6 +6,7 @@
   --f4-color:lightblue;
   --fif-color:#004;
   --six-color:#afafde;
+  --f:20px;
 }
 ::selection
 {
@@ -32,7 +33,7 @@ header
   color:white;
   position:sticky;
   top:0px;
-  height:20px;
+  height:var(--f);
 }
  a
  {
@@ -45,6 +46,11 @@ header
  a:visited
  {
    color:purple;
+ }
+ a:hover
+ {
+   color:red;
+   background-color:black;
  }
 header a:visited
 {
@@ -71,8 +77,7 @@ header a:link
  min-height:165px;
  line-height:2;
  overflow:hidden;
- animation:heading 2s ease;
- border-radius:0 70px 70px 0;
+ animation:heading 2s linear forwards;
 }
 @keyframes heading
 {
@@ -81,12 +86,13 @@ header a:link
   }
   to{
     opacity:1;
+    border-radius:0 70px 70px 0;
   }
 }
 #photo
 {
   grid-column-start:B;
-  animation:photo 3s ease forwards;
+  animation:photo 2s ease forwards;
   animation-iteration-count:1;
 }
 @keyframes photo
@@ -95,7 +101,7 @@ header a:link
         transform:translateX(100%);
     }
     to {
-        transform: translateX(0%); /* Adjust position to center the shape */
+        transform: translateX(0%);
     }
 }
 #writing
@@ -117,10 +123,6 @@ header a:link
 {
   text-transform:uppercase;
 }
-a:hover
-{
-  background-color:lightblue;
-}
 img
 {
   height:160px;
@@ -133,7 +135,7 @@ img
   background-color:var(--six-color);
   width:80vw;
   margin:15px auto 15px auto;
-  border-radius:15px;
+  border-radius:25px;
   padding:10px;
   height:200px;
   overflow:auto;
@@ -185,7 +187,6 @@ ol ul li
 }
 table
 {
-  background-color:#eff;
   margin:auto;
   text-align:center;
   min-width:90vw;
@@ -194,6 +195,7 @@ th
 {
   background-color:var(--th-color);
   color:white;
+  border-radius:0 15px 0 15px;
 }
 td
 {
@@ -217,12 +219,132 @@ dt
   color:var(--f1-color);
   text-align:center;
   box-shadow:6px 2px 10px black;
+  animation:appear linear;
+  animation-timeline:view();
+  animation-range:entry 0;
+}
+@keyframes appear{
+  from{
+    opacity:0.5;
+    transform:translatex(-100px);
+  }
+  to{
+    opacity:1;
+    transform:translatex(0);
+  }
 }
 #note
 {
   outline:2px solid white;
   border-radius:15px;
   padding:0px 10px 0px 10px;
+}
+#ap{
+  width:90vw;
+  height:50vw;
+  margin:auto;
+  background-color:#dee;
+  margin-top:10vw;
+  position:relative;
+  overflow:hidden;
+}
+.bol{
+  background-color:purple;
+  position:relative;
+  color:white;
+  height:15vw;
+  width:15vw;
+  display:flex;
+  font-weight:bold;
+  justify-content:center;
+  border-radius:50%;
+  align-items:center;
+  animation:bx 10s infinite linear,
+            by 1s infinite ease-out alternate,
+            r 10s infinite linear;
+}
+@keyframes bx{
+  from{
+    left:-10vw;
+  }
+  to{
+    left:85vw;
+  }
+}
+@keyframes by{
+  from{
+    top:35vw;
+  }
+  to{
+    top:0vw;
+  }
+}
+@keyframes r{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+#app{
+  width:90vw;
+  height:50vw;
+  margin:auto;
+  background-color:#eef;
+  margin-top:10vw;
+  position:relative;
+  overflow:hidden;
+}
+.boll{
+  background-color:purple;
+  position:relative;
+  color:white;
+  height:15vw;
+  width:15vw;
+  border-radius:50%;
+  text-align:center;
+  animation:x 10s infinite linear,
+            y 10s infinite ease-out,
+            r 10s infinite linear;
+}
+@keyframes x{
+  0%{
+    left:-10vw;
+  }
+  25%{
+    left:15vw;
+  }
+  50%{
+    left:40vw;
+  }
+  75%{
+    left:65vw;
+  }
+  100%{
+    left:90vw;
+  }
+}
+@keyframes y{
+  0%,50%,100%{
+    top:35vw;
+  }
+  25%{
+    top:0vw;
+    animation-timing-function:ease-in;
+  }
+  75%{
+    top:20vw;
+    animation-timing-function:ease-in;
+  }
+}
+@keyframes r{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
 }
 iframe
 {
@@ -241,6 +363,7 @@ footer
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+
 @media only screen and (max-width:455px){
   body{
     background-color:var(--f1-color);
