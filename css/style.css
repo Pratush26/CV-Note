@@ -18,6 +18,7 @@
   padding:auto;
   font-family:Poppins;
 }
+//body{background-color:red !important;}
 #nav
 {
   display:flex;
@@ -34,6 +35,7 @@ header
   position:sticky;
   top:0px;
   height:var(--f);
+  z-index:10;
 }
  a
  {
@@ -77,7 +79,7 @@ header a:link
  min-height:165px;
  line-height:2;
  overflow:hidden;
- animation:heading 2s linear forwards;
+ animation:heading 2s ease-in forwards;
 }
 @keyframes heading
 {
@@ -86,13 +88,13 @@ header a:link
   }
   to{
     opacity:1;
-    border-radius:0 70px 70px 0;
+    border-radius:0 75px 75px 0;
   }
 }
 #photo
 {
   grid-column-start:B;
-  animation:photo 2s ease forwards;
+  animation:photo 2s ease-out forwards;
   animation-iteration-count:1;
 }
 @keyframes photo
@@ -129,6 +131,7 @@ img
   width:160px;
   border:3px inset white;
   border-radius:50%;
+  margin:2px;
 }
 #scrollbar
 {
@@ -189,7 +192,7 @@ table
 {
   margin:auto;
   text-align:center;
-  min-width:90vw;
+  min-width:100vw;
 }
 th
 {
@@ -238,116 +241,6 @@ dt
   outline:2px solid white;
   border-radius:15px;
   padding:0px 10px 0px 10px;
-}
-#ap{
-  width:90vw;
-  height:50vw;
-  margin:auto;
-  background-color:#dee;
-  margin-top:10vw;
-  position:relative;
-  overflow:hidden;
-}
-.bol{
-  background-color:purple;
-  position:relative;
-  color:white;
-  height:15vw;
-  width:15vw;
-  display:flex;
-  font-weight:bold;
-  justify-content:center;
-  border-radius:50%;
-  align-items:center;
-  animation:bx 10s infinite linear,
-            by 1s infinite ease-out alternate,
-            r 10s infinite linear;
-}
-@keyframes bx{
-  from{
-    left:-10vw;
-  }
-  to{
-    left:85vw;
-  }
-}
-@keyframes by{
-  from{
-    top:35vw;
-  }
-  to{
-    top:0vw;
-  }
-}
-@keyframes r{
-  from{
-    transform:rotate(0deg);
-  }
-  to{
-    transform:rotate(360deg);
-  }
-}
-#app{
-  width:90vw;
-  height:50vw;
-  margin:auto;
-  background-color:#eef;
-  margin-top:10vw;
-  position:relative;
-  overflow:hidden;
-}
-.boll{
-  background-color:purple;
-  position:relative;
-  color:white;
-  height:15vw;
-  width:15vw;
-  border-radius:50%;
-  text-align:center;
-  animation:x 10s infinite linear,
-            y 10s infinite ease-out,
-            r 10s infinite linear;
-}
-@keyframes x{
-  0%{
-    left:-10vw;
-  }
-  25%{
-    left:15vw;
-  }
-  50%{
-    left:40vw;
-  }
-  75%{
-    left:65vw;
-  }
-  100%{
-    left:90vw;
-  }
-}
-@keyframes y{
-  0%,50%,100%{
-    top:35vw;
-  }
-  25%{
-    top:0vw;
-    animation-timing-function:ease-in;
-  }
-  75%{
-    top:20vw;
-    animation-timing-function:ease-in;
-  }
-}
-@keyframes r{
-  from{
-    transform:rotate(0deg);
-  }
-  to{
-    transform:rotate(360deg);
-  }
-}
-.shadow{
-  box-shadow:1px 1px 8px black;
 }
 iframe
 {
