@@ -110,7 +110,7 @@ header a:link
 {
   grid-column:A/B;
   grid-row:1/2;
-  animation:writing 2s ease forwards;
+  animation:wriing 2s ease forwards;
 }
 @keyframes writing
 {
