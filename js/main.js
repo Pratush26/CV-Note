@@ -12,7 +12,9 @@ gsap.from("#sub",{
     trigger:"#sub",
     scroller:"body",
     start:"top 95%",
-    end:"top 100%",
-    scrub:2
+    end:"top 85%",
+    scrub:2,
+    //markers:true,
+    //pin:true
   }
 })
