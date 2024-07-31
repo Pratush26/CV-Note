@@ -21,7 +21,7 @@ gsap.from("#sub",{
 var path = "M10 10 Q 50 10 90 10";
 var fpath = "M10 10 Q 50 10 90 10";
 var s = document.querySelector("#svg");
-var music = document.querySelector("audio");
+var music = document.querySelector("#audio");
 s.addEventListener('mousemove',function (dets) {
   console.log("oh my god");
   console.log(dets);
