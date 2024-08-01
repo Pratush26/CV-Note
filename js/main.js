@@ -1,4 +1,12 @@
 // Add all your JS her
+let body = document.querySelector("body");
+body.addEventListener('mousemove',(pos)=>{
+  gsap.to("#cursor",{
+    x:pos.x,
+    y:pos.y,
+    duration:.6
+  })
+})
 gsap.from(".wr",{
   y:30,
   duration:2,
@@ -18,14 +26,14 @@ gsap.from("#sub",{
     //pin:true
   }
 })
-var path = "M10 10 Q 50 10 90 10";
-var fpath = "M10 10 Q 50 10 90 10";
+var path = "M10 60 Q 200 60 400 60";
+var fpath = "M10 60 Q 200 60 400 60";
 var s = document.querySelector("#svg");
 var music = document.querySelector("audio");
-s.addEventListener('mousemove',function (dets) {
+s.addEventListener('mousemove',function(dets){
   console.log("oh my god");
   console.log(dets);
-  path = `M10 10 Q ${dets.x} ${dets.x} 90 10`;
+  path = `M10 60 Q ${dets.x} ${dets.y} 400 60`;
   gsap.to("svg path",{
     attr:{d:path},
     duration:0.3,

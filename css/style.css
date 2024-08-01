@@ -19,6 +19,14 @@
   font-family:Poppins;
 }
 //body{background-color:red !important;}
+#cursor{
+  height:20px;
+  width:20px;
+  z-index:1;
+  position:fixed;
+  border-radius:50%;
+  background-color:white;
+}
 #nav
 {
   display:flex;
