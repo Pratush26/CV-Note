@@ -224,14 +224,6 @@ dt
   color:white;
   width:50vw;
 }
-#svg{
-  display:flex;
-  flex-direction:column;
-}
-svg{
-  width:100%;
-  height:auto;
-}
 #sub
 {
   background-color:var(--sec-color);

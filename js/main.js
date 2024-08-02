@@ -26,14 +26,13 @@ gsap.from("#sub",{
     //pin:true
   }
 })
-var path = "M10 60 Q 200 60 400 60";
-var fpath = "M10 60 Q 200 60 400 60";
+var path = "M 10 80 Q 95 80 380 80";
+var fpath = "M 10 80 Q 95 80 380 80";
 var s = document.querySelector("#svg");
 var music = document.querySelector("audio");
 s.addEventListener('mousemove',function(dets){
-  console.log("oh my god");
   console.log(dets);
-  path = `M10 60 Q ${dets.x} ${dets.y} 400 60`;
+  path = `M10 80 Q ${dets.x} ${dets.y} 380 80`;
   gsap.to("svg path",{
     attr:{d:path},
     duration:0.3,
@@ -41,7 +40,6 @@ s.addEventListener('mousemove',function(dets){
   })
 })
 s.addEventListener('mouseleave',function (le) {
-  console.log("left");
   music.play();
   gsap.to("svg path",{
     attr:{d:fpath},
