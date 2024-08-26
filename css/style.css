@@ -18,6 +18,37 @@
   padding:auto;
   font-family:Poppins;
 }
+#loadpage{
+  background-color:lavender;
+  position:fixed;
+  display:grid;
+  place-content:center;
+  z-index:999;
+  inset:0;
+}
+#loader{
+  height:15vw;
+  width:15vw;
+  border-radius:50%;
+  border-right:1vw solid transparent;
+  border-top:1vw solid black;
+  animation:load 1s ease-in-out infinite;
+}
+@keyframes load{
+  to{
+    transform:rotate(360deg);
+  }
+}
+.hidden{
+  visibility:hidden;
+}
+#page-content{
+  opacity:0;
+}
+#page-content.visible{
+  opacity:1;
+  transition:.5s linear;
+}
 //body{background-color:red !important;}
 #cursor{
   height:20px;

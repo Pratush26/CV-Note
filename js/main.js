@@ -1,4 +1,12 @@
 // Add all your JS her
+let load = document.querySelector('#loadpage')
+let page = document.querySelector('#page-content')
+
+window.addEventListener('load',()=>{
+  load.classList.add('hidden')
+  page.classList.add('visible')
+})
+
 let body = document.querySelector("body");
 body.addEventListener('mousemove',(pos)=>{
   gsap.to("#cursor",{
